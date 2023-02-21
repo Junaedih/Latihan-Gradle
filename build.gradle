@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+group 'org.junaedih1'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'com.google.guava:guava:29.0-jre'
+    testImplementation 'junit:junit:4.13'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task greetingTask (type:DefaultTask){
+    description ("Menjalankan greetingTask custom task")
+    doLast {
+       String name = project.hasProperty('name')?  project.property('name') : 'Gradle User'
+               println "Hello, $name! Welcome to Gradle World!"
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
